@@ -1,0 +1,13 @@
+kshare_android_project/
+│
+├── main.py             # Your main Python application logic (Kivy App)
+│
+├── kshare.kv           # The Kivy language file for your UI layout
+│
+├── images/             # A folder to store all your image assets
+│   ├── send.png
+│   ├── folder.png
+│   ├── sun.png
+│   └── moon.png
+│
+└── buildozer.spec      # (This file will be created automatically when you run 'buildozer init')
