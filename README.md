@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/10248436/141975293-1bb312f3-0925-471a-82f5-23c2125797a7.png" alt="KShare Logo" width="150"/>
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhl8lkARlEO5dtky5n-8BDvjv6vPpnqKEcdaT70wagSr5MDWSCBifFqL55q8DdRbgj0dOJDKRrCjUntVg3kxk55aGJA0ZqCUDxdgODo8qSKtafLHgLphtZARq86l7b_5n-iyB32lCksWKEs0qpdaDXRV1xmSP8y6LPpMYPONaNcdvXz7dakKuyhOkMzr1NJ/s320/1000018855.jpg" alt="KShare Logo" width="150"/>
   <h1>KShare ⚡</h1>
   <p><strong>Your Private, Cross-Platform File & Folder Sharing Hub</strong></p>
 
