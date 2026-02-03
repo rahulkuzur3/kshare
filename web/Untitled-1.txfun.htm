@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PRIMARY SEO TITLES & DESCRIPTION (Combined from both files) -->
+    <title>KVPlayer: Free Media Player for Windows, Linux | Story, Features, Roadmap & Download</title>
+    <meta name="description" content="Download the fast, lightweight KVPlayer (Official 2025). Discover its core features, powerful Python/Kivy technology, roadmap, and story. Supports Windows, Linux (Snap/.deb), Android, and FreeBSD.">
+    <meta name="keywords" content="KVPlayer, kvplayer download, linux media player, windows media player, freebsd media player, android video player, lightweight player, python kivy ffpyplayer, kv player roadmap">
+    <meta name="author" content="Rahul Kuzur">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kvplayer.site">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph / Twitter Card (Using Index.html's comprehensive data) -->
+    <meta property="og:title" content="KVPlayer Download - Windows, Linux, Android & FreeBSD">
+    <meta property="og:description" content="Get the free KVPlayer download. The universal player supporting Snap, .deb, FreeBSD, and Windows. Lightweight and fast.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kvplayer.site">
+    <meta property="og:image" content="https://kvplayer.site/og-image.png">
+    <meta property="og:site_name" content="KVPlayer">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KVPlayer Download | Official Site">
+    <meta name="twitter:description" content="Download KVPlayer for Windows, Linux (Snap/Deb), and FreeBSD. The best free lightweight media player.">
+    <meta name="twitter:image" content="https://kvplayer.site/logo.webp">
+    <meta name="twitter:site" content="@kvplayer0">
+
+    <!-- Structured Data (Software Application) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "KVPlayer",
+      "url": "https://kvplayer.site",
+      "description": "KVPlayer is a fast, lightweight media player supporting Windows, macOS, Linux (Snap & .deb), Android, and FreeBSD.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows 10, Windows 11, Linux, Android, FreeBSD, macOS",
+      "fileFormat": ["application/vnd.android.package-archive", "application/x-debian-package", "application/x-msdownload"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "150"
+      },
+      "image": "https://kvplayer.site/logo.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Kuzur"
+      },
+      "downloadUrl": "https://kvplayer.site/#download"
+    }
+    </script>
+    
+    <!-- Preconnect to required origins for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload assets -->
+    <link rel="preload" as="image" href="https://raw.githubusercontent.com/rahulkuzur3/KVPlayer/master/KVPlayer/KVPlayer_Screenshot.PNG">
+    <link rel="preload" as="image" href="screenshot2.webp">
+    
+    <!-- Asynchronously load fonts and icons to prevent blocking page render -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </noscript>
+
+    <!-- [CRITICAL & GLOBAL CSS] - Merged from both files -->
+    <style>
+        :root{--bg-dark:#0D1117;--bg-surface:#161B22;--border-color:rgba(255,255,255,.1);--accent-primary:#3882F6;--text-primary:#E6EDF3;--text-secondary:#8B949E;--font-family:'Inter',sans-serif;--shadow-lg:0 20px 40px -10px rgba(0,0,0,.4)}
+        *,:after,:before{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{background-color:var(--bg-dark);color:var(--text-primary);font-family:var(--font-family);line-height:1.7;overflow-x:hidden}
+        body.no-scroll{overflow:hidden}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+        
+        /* Navbar & Hero (index.html focused) */
+        .navbar{padding:1.5rem 0;position:fixed;width:100%;z-index:1000;top:0;transition:background-color .4s ease,backdrop-filter .4s ease}
+        .navbar.scrolled{background-color:rgba(13,17,23,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border-color)}
+        .navbar .container{display:flex;justify-content:space-between;align-items:center}
+        .logo{display:flex;align-items:center;text-decoration:none;color:var(--text-primary);font-size:1.5rem;font-weight:700;z-index:1001}
+        .logo img{height:40px;margin-right:12px}
+        .nav-links-desktop{display:flex;align-items:center;gap:3rem;list-style:none}
+        .nav-links-desktop a{color:var(--text-secondary);text-decoration:none;font-weight:600;transition:color .3s ease}
+        .nav-links-desktop a:hover{color:var(--text-primary)}
+        .hamburger{display:none;cursor:pointer;z-index:1001;background:0 0;border:none;padding:0}
+        .bar{display:block;width:28px;height:3px;margin:6px auto;background-color:var(--text-primary);transition:all .3s ease-in-out}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:0.8rem 1.8rem;border-radius:8px;text-decoration:none;font-weight:600;transition:all .3s ease;border:1px solid transparent}
+        .btn-primary{background:var(--accent-primary);color:#fff; border-color: var(--accent-primary)}
+        .btn-primary:hover{background:#fff;color:var(--accent-primary)}
+
+        /* Hero (index.html version, but with about.html background for consistency) */
+        .hero{height:100vh;display:flex;align-items:center;text-align:center;position:relative;background:radial-gradient(ellipse at 50% 40%,rgba(13,17,23,0) 0,var(--bg-dark) 80%),var(--bg-dark)}
+        .hero-content{z-index:1}
+        .hero-title{font-size:clamp(3rem,8vw,5.5rem);font-weight:700;margin-bottom:1rem;line-height:1.1;letter-spacing:-2.5px;color:var(--text-primary)}
+        .hero-subtitle{font-size:clamp(1.1rem,3vw,1.3rem);color:var(--text-secondary);max-width:700px;margin:0 auto 2.5rem}
+
+        /* Mobile Nav */
+        .nav-overlay{position:fixed;top:0;left:-100%;width:100%;height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;background-color:rgba(13,17,23,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:left .4s cubic-bezier(.77,0,.175,1);z-index:999}
+        .nav-overlay.active{left:0}
+        .nav-links-mobile{list-style:none;text-align:center}
+        .nav-links-mobile li{margin:20px 0;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+        .nav-overlay.active .nav-links-mobile li{opacity:1;transform:translateY(0)}
+        .nav-links-mobile a{color:var(--text-primary);text-decoration:none;font-size:2.5rem;font-weight:700;transition:color .3s ease}
+        .nav-links-mobile a:hover{color:var(--accent-primary)}
+        .hamburger.active .bar:nth-child(2){opacity:0}
+        .hamburger.active .bar:nth-child(1){transform:translateY(9px) rotate(45deg)}
+        .hamburger.active .bar:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+
+        /* General Sections & Cards */
+        .content-section{padding:6rem 0}
+        .content-section-dark{background-color:var(--bg-surface);padding:6rem 0}
+        .section-title{text-align:center;font-size:clamp(2.2rem,6vw,3rem);font-weight:700;margin-bottom:4rem;color:var(--text-primary);letter-spacing:-1px}
+        .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+        .pro-card{background:var(--bg-surface);border:1px solid var(--border-color);border-radius:12px;padding:2.5rem;text-align:center;position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;text-decoration:none;color:var(--text-primary)}
+        .pro-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(56,130,246,0.15);border-color:var(--accent-primary)}
+        .card-content{z-index:2;position:relative}
+        .feature-icon{font-size:2.5rem;margin-bottom:1.5rem;color:var(--accent-primary)}
+        .pro-card h3{font-size:1.3rem;margin-bottom:.5rem;font-weight:600}
+        .pro-card p{color:var(--text-secondary)}
+
+        /* Why KVPlayer Section */
+        .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .why-image img{width:100%;height:auto;border-radius:10px;border:1px solid var(--border-color)}
+        .why-text .section-title{text-align:left;margin-bottom:2rem}
+        .why-text ul{list-style:none;padding:0}
+        .why-text li{display:flex;align-items:center;gap:1rem;font-size:1.1rem;margin-bottom:1rem;font-weight:600}
+        .why-text li i{color:var(--accent-primary);font-size:1.5rem}
+
+        /* Tech Stack Section (from about.html) */
+        .tech-grid{display:grid;grid-template-columns:1fr 2fr;align-items:center;gap:4rem;max-width:1000px;margin:0 auto}
+        .tech-logos{display:flex;flex-direction:column;gap:1.5rem}
+        .tech-logo-item{display:flex;align-items:center;gap:1rem;background:var(--bg-dark);padding:1rem;border-radius:8px;border:1px solid var(--border-color)}
+        .tech-logo-item i{font-size:2rem;color:var(--accent-primary)}
+        .tech-logo-item span{font-size:1.2rem;font-weight:600}
+        .tech-description h3{font-size:1.8rem;font-weight:600;margin-bottom:1rem}
+        .tech-description p{color:var(--text-secondary)}
+        .tech-description p+p{margin-top:1rem}
+
+        /* Journey/Roadmap Timeline (from about.html) */
+        .timeline{position:relative;max-width:800px;margin:0 auto}
+        .timeline::after{content:'';position:absolute;width:3px;background-color:var(--border-color);top:0;bottom:0;left:50%;margin-left:-1.5px}
+        .timeline-item{padding:1rem 3rem;position:relative;width:50%}
+        .timeline-item:nth-child(odd){left:0;padding-right:50px}
+        .timeline-item:nth-child(even){left:50%;padding-left:50px}
+        .timeline-dot{content:'';position:absolute;width:16px;height:16px;background-color:var(--bg-dark);border:3px solid var(--accent-primary);top:28px;border-radius:50%;z-index:1;box-shadow:0 0 15px var(--accent-primary)}
+        .timeline-item:nth-child(odd) .timeline-dot{right:-8px}
+        .timeline-item:nth-child(even) .timeline-dot{left:-8px}
+        .timeline-date{font-weight:600;color:var(--accent-primary)}
+        .timeline-content{padding:20px;background:var(--bg-surface);border-radius:8px;border:1px solid var(--border-color)}
+        .timeline-content h3{margin-bottom:.5rem}
+
+        /* Meet the Creator (from about.html) */
+        .team-wrapper{display:flex;justify-content:center}
+        .team-member-card{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:500px;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:12px;padding:3rem;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+        .team-member-photo{width:180px;height:180px;border-radius:50%;background-size:cover;background-position:center;border:5px solid var(--accent-primary);margin-bottom:1.5rem;box-shadow:0 0 20px rgba(56,130,246,0.3)}
+        .team-member-info h3{font-size:1.8rem;font-weight:600}
+        .team-role{color:var(--accent-primary);font-weight:600;margin-bottom:1rem}
+        .team-bio{color:var(--text-secondary)}
+        .team-social-links{margin-top:1.5rem}
+        .team-social-links a{color:var(--text-secondary);font-size:1.5rem;margin:0 .75rem;transition:color .3s ease,transform .3s ease;display:inline-block}
+        .team-social-links a:hover{color:var(--accent-primary);transform:scale(1.2)}
+
+        /* Download Section & Modals */
+        .download-card h3{font-size:1.5rem}
+        .download-card p{font-size:.9rem;margin:.5rem 0 1.5rem;min-height:45px}
+        .download-card .btn-primary, .download-card .btn-disabled{padding:.8rem 1.5rem;font-size:.9rem;border-radius:8px}
+        .btn-disabled{display:inline-block;padding:.8rem 1.5rem;border-radius:8px;font-weight:600;background:rgba(139,148,158,.2);color:var(--text-secondary);cursor:not-allowed; text-decoration: none;}
+
+        /* Project Info Card */
+        .project-info-card{padding:2rem}
+        .project-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;text-align:left}
+        .project-link-item{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:8px;transition:background-color .3s ease,transform .3s ease;text-decoration:none;color:var(--text-primary)}
+        a.project-link-item:hover{background-color:rgba(56,130,246,.1);transform:scale(1.03)}
+        .project-link-item.non-clickable{cursor:default;opacity:.7}
+        .project-link-item i{font-size:1.8rem;color:var(--accent-primary);width:30px;text-align:center}
+        .link-text{display:flex;flex-direction:column}
+        .link-text strong{font-weight:600;color:var(--text-primary);font-size:1.1rem}
+        .link-text span{color:var(--text-secondary);word-break:break-all}
+        a.project-link-item:hover .link-text span{color:var(--text-primary)}
+        
+        /* Modals */
+        .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(13,17,23,.8);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+        .modal-overlay.active{opacity:1;visibility:visible}
+        .modal-content{width:90%;max-width:600px;padding:2rem;position:relative}
+        .modal-close-btn{position:absolute;top:1rem;right:1.5rem;background:0 0;border:0;color:var(--text-secondary);font-size:2rem;cursor:pointer;transition:color .3s ease,transform .3s ease}
+        .modal-close-btn:hover{color:var(--text-primary);transform:rotate(90deg)}
+        .modal-subtitle{color:var(--text-secondary);margin:-1rem 0 2rem;border-bottom:1px solid var(--border-color);padding-bottom:1rem}
+        .distro-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+        .distro-options .btn-disabled{width:100%;text-align:left;display:flex;align-items:center;gap:.75rem}
+
+        /* AOS Animations */
+        [data-aos]{opacity:0;transition-property:transform,opacity;transition-timing-function:ease-out-cubic}
+        [data-aos=fade-up]{transform:translateY(50px)}
+        [data-aos=fade-right]{transform:translateX(-50px)}
+        [data-aos=fade-left]{transform:translateX(50px)}
+        [data-aos=zoom-in-up]{transform:translateY(50px) scale(.9)}
+        [data-aos].aos-animate{opacity:1;transform:translate(0,0) scale(1)}
+        
+        /* Media Queries (Combined) */
+        @media (max-width:992px){
+            .nav-links-desktop{display:none}
+            .hamburger{display:block}
+            .why-grid{grid-template-columns:1fr}
+            .tech-grid{grid-template-columns:1fr;text-align:center}
+            .tech-logos{flex-direction:row;justify-content:center;flex-wrap:wrap}
+        }
+        @media (max-width:768px){
+            .hero-title{letter-spacing:-1.5px}
+            .timeline::after{left:31px}
+            .timeline-item{width:100%;padding-left:70px;padding-right:25px}
+            .timeline-item:nth-child(even){left:0}
+            .timeline-dot{left:23px}
+            .footer .container{flex-direction:column;text-align:center}
+            .feature-grid{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="logo.webp" alt="KVPlayer Logo" width="40" height="40" decoding="async">
+                <span>KVPlayer</span>
+            </a>
+            <!-- Merged Navigation Links -->
+            <ul class="nav-links-desktop">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#why">Why KVPlayer</a></li>
+                <li><a href="#tech-stack">Technology</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#meet-the-creator">Creator</a></li>
+                <li><a href="#download" class="btn btn-primary">Download</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="nav-overlay">
+        <ul class="nav-links-mobile">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#why">Why KVPlayer</a></li>
+            <li><a href="#tech-stack">Technology</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#meet-the-creator">Creator</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="https://github.com/rahulkuzur3/KVPlayer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section (from index.html) -->
+    <header class="hero">
+        <div class="hero-content container">
+            <h1 class="hero-title">KVPlayer: The Ultimate Free Media Player</h1>
+            <p class="hero-subtitle">The fast, open-source kvplayer download you've been looking for. Built with Python & Kivy for Windows, Linux (Snap/Deb), Android & FreeBSD.</p>
+            <a href="#download" class="btn btn-primary"><i class="fas fa-download"></i> Download Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Features Section (Combined from both files) -->
+        <section id="features" class="content-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">A Foundation of Excellence & Core Features</h2>
+                <div class="feature-grid">
+                    <!-- Features from about.html -->
+                    <div class="pro-card" data-aos="fade-up"><div class="card-content"><div class="feature-icon"><i class="fas fa-desktop"></i></div><h3>Sleek, Minimalist Interface</h3><p>A modern, dark-themed UI that gets out of your way. Controls are auto-hiding and appear only when needed.</p></div></div>
+                    <div class="pro-card" data-aos="fade-up" data-aos-delay="100"><div class="card-content"><div class="feature-icon"><i class="fas fa-rocket"></i></div><h3>High-Performance Playback</h3><p>Utilizes hardware acceleration and fast seeking for smooth playback and instantaneous skipping through any media file.</p></div></div>
+                    <div class="pro-card" data-aos="fade-up" data-aos-delay="200"><div class="card-content"><div class="feature-icon"><i class="fas fa-layer-group"></i></div><h3>Truly Cross-Platform</h3><p>Runs natively on Windows, macOS, and Linux from a single, modern codebase, ensuring a consistent experience everywhere.</p></div></div>
+                    <div class="pro-card" data-aos="fade-up" data-aos-delay="300"><div class="card-content"><div class="feature-icon"><i class="fas fa-volume-high"></i></div><h3>Multi-Audio Track Support</h3><p>Automatically detects and allows you to switch between multiple audio tracks in your video files with a single click.</p></div></div>
+                    
+                    <!-- Features from index.html (additional/unique points) -->
+                    <div class="pro-card" data-aos="fade-up" data-aos-delay="400"><div class="card-content"><div class="feature-icon"><i class="fas fa-infinity"></i></div><h3>Universal Compatibility</h3><p>Plays MKV, MP4, AVI, and supports Snap, .deb, and FreeBSD packages.</p></div></div>
+                    <div class="pro-card" data-aos="fade-up" data-aos-delay="500"><div class="card-content"><div class="feature-icon"><i class="fas fa-feather-alt"></i></div><h3>Blazing Fast & Lightweight</h3><p>Enjoy instant startups and smooth playback without draining your system resources. Efficiency is our core feature.</p></div></div>
+                    <div class="pro-card" data-aos="fade-up" data-aos-delay="600"><div class="card-content"><div class="feature-icon"><i class="fas fa-atom"></i></div><h3>Pixel-Perfect Playback</h3><p>Advanced rendering engine ensures pristine video quality with hardware acceleration and color accuracy.</p></div></div>
+                    <div class="pro-card" data-aos="fade-up" data-aos-delay="700"><div class="card-content"><div class="feature-icon"><i class="fas fa-code-branch"></i></div><h3>Transparent & Open Source</h3><p>Completely free, with no ads, no tracking, and no hidden agenda. The code is open for the world to see and improve.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why KVPlayer Section (from index.html) -->
+        <section id="why" class="content-section">
+            <div class="container why-grid">
+                <div class="why-image" data-aos="fade-right"><img src="screenshot1.webp" alt="KVPlayer Main Screen" loading="lazy" decoding="async" width="558" height="314"></div>
+                <div class="why-text" data-aos="fade-left">
+                    <h2 class="section-title">Beyond the Standard.</h2>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>No Codec Packs Needed.</strong> It just works, out of the box.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Intuitive Minimalist UI.</strong> All power, no clutter. Your media is the star.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Cross-Platform.</strong> Seamless experience on Windows, Linux, and FreeBSD.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Community Driven.</strong> Built with passion for users who demand the best.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section (from about.html) -->
+        <section id="tech-stack" class="content-section-dark">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Built with Powerful Technology</h2>
+                <div class="tech-grid">
+                    <div class="tech-logos" data-aos="fade-right">
+                        <div class="tech-logo-item"><i class="fab fa-python"></i><span>Python</span></div>
+                        <div class="tech-logo-item"><i class="fas fa-mobile-alt"></i><span>Kivy</span></div>
+                        <div class="tech-logo-item"><i class="fas fa-film"></i><span>FFpyplayer</span></div>
+                    </div>
+                    <div class="tech-description" data-aos="fade-left">
+                        <h3>Python + Kivy + FFpyplayer</h3>
+                        <p>KVPlayer is built on a modern and powerful stack. **Python** provides a robust and flexible foundation, while the **Kivy** framework allows us to create a sleek, hardware-accelerated user interface that runs natively on Windows, macOS, and Linux from a single codebase.</p>
+                        <p>At its core, **FFpyplayer** serves as a high-performance bridge to the industry-standard **FFmpeg** multimedia library, enabling flawless playback of virtually any format with minimal resource usage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section (from about.html) -->
+        <section id="journey" class="content-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">The Journey So Far</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">2025</div><div class="timeline-content"><h3>The Project Begins</h3><p>The first lines of code were written, starting a journey to create a clean, modern, and efficient media player for Windows.</p></div></div>
+                    <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">Development</div><div class="timeline-content"><h3>Core Features & Design</h3><p>Focus shifted to a robust foundation, implementing playlist management, broad format support, and crafting a sleek, user-friendly interface.</p></div></div>
+                    <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">Open Source</div><div class="timeline-content"><h3>Sharing with the World</h3><p>KVPlayer was made open-source to allow the community to learn, contribute, and be part of its growth. The goal: a player built for users, by users.</p></div></div>
+                    <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">Q2 2025 </div><div class="timeline-content"><h3>Linux & Windows Beta Launch</h3><p>Release the first Linux & Windows  prototype with  .deb & .exe</p></div></div> 
+                    <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">Q3 2025 </div><div class="timeline-content"><h3>Website Launch</h3><p>Launch the official KV Player website with app info, downloads, and documentation.</p></div></div> 
+                   <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">Q4 2025 </div><div class="timeline-content"><h3>Linux & Windows Stable Release</h3><p>Release the stable version of  Linux & Windows </p></div></div> 
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- Roadmap Section (from about.html) -->
+        <section id="roadmap" class="content-section-dark">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">What's Next: The Roadmap</h2>
+                <div class="timeline">
+                     <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">Q1 2026 </div><div class="timeline-content"><h3>Publish on Microsoft store & snapcraft</h3><p>Publish KV Player Windows build on Microsoft Store for early users and feedback And Release KV Player Linux build on Snapcraft with easy installation for all major distros. </p></div></div> 
+
+                    <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">Q2 2026</div><div class="timeline-content"><h3>Performance & Codec Update</h3><p>Focus on optimizing the rendering engine, improving performance on older hardware, and expanding support for next-gen codecs like AV1.</p></div></div>
+                    <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">Q3 2026</div><div class="timeline-content"><h3>Mac & Free BSD Support</h3><p>Begin development for native Free BSD and macOS versions, bringing the KVPlayer experience to a wider audience of users and developers.</p></div></div>
+                    
+                    <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">Q4 2026</div><div class="timeline-content"><h3>Android & touch tuch Support</h3><p>Begin development for native Android and ubuntu touch versions, bringing the KVPlayer experience to a wider audience of users and developers.</p></div></div>
+                     <div class="timeline-item" data-aos="fade-up"><div class="timeline-dot"></div><div class="timeline-date">The Future</div><div class="timeline-content"><h3>The Next Generation</h3><p>Exploring features like theme customization, plugin support, and cloud media integration to create the ultimate media ecosystem.</p></div></div>
+            </div>
+        </section>
+
+        <!-- Meet the Creator (from about.html) -->
+        <section id="meet-the-creator" class="content-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Meet the Creator</h2>
+                <div class="team-wrapper">
+                    <div class="team-member-card" data-aos="zoom-in-up">
+                        <div class="team-member-photo" style="background-image: url('profile-pic.webp');"></div>
+                        <div class="team-member-info">
+                            <h3>Rahul Kuzur</h3><p class="team-role">Founder & Developer</p>
+                            <p class="team-bio">A passionate developer with a love for creating clean, functional, and user-friendly desktop applications. KVPlayer is a showcase of this dedication and a commitment to the open-source community.</p>
+                            <div class="team-social-links">
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="https://github.com/rahulkuzur3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOWNLOAD SECTION (from index.html) -->
+        <section id="download" class="content-section">
+             <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Start Your KVPlayer Download</h2>
+                <div class="feature-grid download-grid">
+                    
+                    <!-- Windows -->
+                    <div class="pro-card download-card" data-aos="zoom-in-up">
+                        <div class="card-content"><div class="feature-icon"><i class="fab fa-windows"></i></div><h3>Windows</h3><p>Installer 32 & 64 bit</p><a href="#" id="open-windows-modal" class="btn btn-primary">Download Now</a></div>
+                    </div>
+
+                    <!-- Linux (Snap & Deb) -->
+                    <div class="pro-card download-card" data-aos="zoom-in-up" data-aos-delay="100">
+                        <div class="card-content"><div class="feature-icon"><i class="fab fa-linux"></i></div><h3>Linux</h3><p>Snap Store & .deb Package</p><a href="#" id="open-linux-modal" class="btn btn-primary">Download Now</a></div>
+                    </div>
+
+                    <!-- FreeBSD -->
+                    <div class="pro-card download-card" data-aos="zoom-in-up" data-aos-delay="150">
+                        <div class="card-content"><div class="feature-icon"><i class="fas fa-cube"></i></div><h3>FreeBSD</h3><p>Native support for BSD systems.</p><span class="btn-disabled">Coming Soon</span></div>
+                    </div>
+
+                    <!-- Android -->
+                    <div class="pro-card download-card" data-aos="zoom-in-up" data-aos-delay="200">
+                        <div class="card-content"><div class="feature-icon"><i class="fab fa-android"></i></div><h3>Android</h3><p>APK & Play Store Coming Soon</p><span class="btn-disabled">Coming Soon</span></div>
+                    </div>
+
+                    <!-- macOS -->
+                    <div class="pro-card download-card" data-aos="zoom-in-up" data-aos-delay="300">
+                        <div class="card-content"><div class="feature-icon"><i class="fab fa-apple"></i></div><h3>macOS</h3><p>Intel & Apple Silicon</p><span class="btn-disabled">Coming Soon</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Project Info Section (from index.html) -->
+        <section id="project-info" class="content-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">An Open Source Collaboration</h2>
+                <div class="pro-card project-info-card" data-aos="zoom-in-up">
+                    <div class="project-links">
+                        <a href="https://kvplayer.kuzur.uk" target="_blank" rel="noopener noreferrer" class="project-link-item"><i class="fas fa-globe"></i><div class="link-text"><strong>Official Website</strong></div></a>
+                        <a href="https://github.com/rahulkuzur3/KVPlayer" target="_blank" rel="noopener noreferrer" class="project-link-item"><i class="fab fa-github"></i><div class="link-text"><strong>Source Code</strong></div></a>
+                        <a href="https://kuzur.uk" target="_blank" rel="noopener noreferrer" class="project-link-item"><i class="fas fa-user-circle"></i><div class="link-text"><strong>Developer</strong><span>Rahul Kuzur</span></div></a>
+                        <div class="project-link-item non-clickable"><i class="fas fa-balance-scale"></i><div class="link-text"><strong>License</strong><span>MIT License (Free & Open Source)</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><p>Crafted with ❤️ by Rahul Kuzur for the open-source community. &copy; 2025 KVPlayer.</p></div>
+    </footer>
+
+    <!-- windows Download Modal (from index.html) -->
+    <div id="windows-modal" class="modal-overlay">
+        <div class="modal-content pro-card" data-aos="zoom-in-up">
+            <button id="close-windows-modal" class="modal-close-btn">&times;</button>
+            <h3>Windows Distributions</h3>
+            <p class="modal-subtitle">Choose your preferred installation method:</p>
+            <div class="distro-options">
+                <a href="https://github.com/rahulkuzur3/KVPlayer/releases/download/v1.0.1/KVPlayer_1.0.1_Windows.exe" class="btn btn-primary"><i class="fas fa-microchip"></i> 64 bit</a>
+                <a href="#download" class="btn-disabled"><i class="fab fa-microsoft"></i> Microsoft Store </a>
+                 <a href="#download" class="btn-disabled"><i class="fas fa-microchip"></i> 32 bit</a>
+                <a href="#download" class="btn-disabled"><i class="fas fa-box"></i> MSI</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linux Download Modal (from index.html) -->
+    <div id="linux-modal" class="modal-overlay">
+        <div class="modal-content pro-card" data-aos="zoom-in-up">
+            <button id="close-linux-modal" class="modal-close-btn">&times;</button>
+            <h3>Linux Distributions</h3>
+            <p class="modal-subtitle">Choose your preferred installation method:</p>
+            <div class="distro-options">
+                <a href="https://github.com/rahulkuzur3/KVPlayer/releases/download/v1.0.1/kvplayer_1.0.1_amd64.deb" class="btn btn-primary"><i class="fab fa-debian"></i> Download .deb</a>
+                <a href="https://snapcraft.io/kvplayer" class="btn btn-primary"><i class="fas fa-cube"></i> Install via Snap</a>
+                <a href="#download" class="btn-disabled"><i class="fab fa-redhat"></i> .rpm </a>
+                <a href="#download" class="btn-disabled"><i class="fas fa-box-open"></i> AppImage </a>
+                <a href="#download" class="btn-disabled"><i class="fas fa-boxes"></i> Flatpak </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deferred scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.querySelector('.navbar');
+            const hamburger = document.querySelector(".hamburger");
+            const navOverlay = document.querySelector(".nav-overlay");
+            const body = document.body;
+            
+            // Navbar Scroll Effect
+            window.addEventListener('scroll',() => navbar.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+            
+            // Mobile Menu Logic
+            function toggleMenu() {
+                hamburger.classList.toggle("active");
+                navOverlay.classList.toggle("active");
+                body.classList.toggle("no-scroll");
+            }
+            hamburger.addEventListener("click", toggleMenu);
+            navOverlay.querySelectorAll("a").forEach(link => link.addEventListener("click", toggleMenu));
+
+            // Modal Logic (Linux)
+            const linuxModal = document.getElementById('linux-modal');
+            const openLinuxModalBtn = document.getElementById('open-linux-modal');
+            const closeLinuxModalBtn = document.getElementById('close-linux-modal');
+            
+            // Modal Logic (Windows)
+            const windowsModal = document.getElementById('windows-modal');
+            const openWindowsModalBtn = document.getElementById('open-windows-modal');
+            const closeWindowsModalBtn = document.getElementById('close-windows-modal');
+
+            function closeModal() {
+                if (linuxModal) linuxModal.classList.remove('active');
+                if (windowsModal) windowsModal.classList.remove('active');                
+                body.classList.remove('no-scroll');
+            }
+            
+            function openModal(e, modalElement) {
+                e.preventDefault();
+                modalElement.classList.add('active');
+                body.classList.add('no-scroll');
+            }
+
+            if(openLinuxModalBtn) openLinuxModalBtn.addEventListener('click', (e) => openModal(e, linuxModal));
+            if(closeLinuxModalBtn) closeLinuxModalBtn.addEventListener('click', closeModal);
+            if(linuxModal) linuxModal.addEventListener('click', (e) => {
+                if (e.target === linuxModal) closeModal();
+            });
+
+            if(openWindowsModalBtn) openWindowsModalBtn.addEventListener('click', (e) => openModal(e, windowsModal));
+            if(closeWindowsModalBtn) closeWindowsModalBtn.addEventListener('click', closeModal);
+            if(windowsModal) windowsModal.addEventListener('click', (e) => {
+                if (e.target === windowsModal) closeModal();
+            });
+        });
+        
+        // AOS Initialization
+        window.addEventListener('load', () => {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 800, once: true, offset: 50 });
+            }
+        });
+    </script>
+</body>
+</html>

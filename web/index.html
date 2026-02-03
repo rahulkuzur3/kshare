@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ********** SEO OPTIMIZATION ********** -->
+    <title>KShare - Cross-Platform P2P File Transfer (Windows, Mac, Linux, Android)</title>
+    <meta name="description" content="KShare: Blazing fast, secure, and truly cross-platform P2P file transfer. Share files instantly from PC to Mobile, Windows to Android, and more, all via local network (LAN) and QR code.">
+    <meta name="keywords" content="P2P file transfer, cross-platform file sharing, LAN file transfer, secure file transfer, Kivy app, PC to mobile transfer, Windows to Android file share, Linux file sharing, QR code file transfer, fast local file transfer, Ubuntu Touch, FreeBSD file sharing">
+    
+    <!-- Link to Tailwind CSS (using CDN for simplicity) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration (for KShare's colors) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kshare-primary': '#38bdf8', // Kivy blue
+                        'kshare-dark': '#0f172a',    // Dark background
+                        'kshare-secondary': '#6366f1', // Secondary action color
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS for smoother background and animations */
+        body {
+            background-color: #0f172a;
+        }
+        .gradient-bg {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 1) 0%, rgba(30, 41, 59, 1) 100%);
+        }
+        /* Keyframe for a simple 'pop-in' animation */
+        @keyframes fadeInSlide {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-popin {
+            animation: fadeInSlide 0.8s ease-out;
+        }
+    </style>
+</head>
+
+<body class="text-white gradient-bg min-h-screen">
+
+    <!-- 1. NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-kshare-dark/95 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-kshare-primary">KShare</h1>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#features" class="hover:text-kshare-primary transition duration-300">Features</a>
+                <a href="#compatibility" class="hover:text-kshare-primary transition duration-300">Compatibility</a>
+                <a href="#download" class="px-4 py-2 rounded-lg bg-kshare-secondary hover:bg-kshare-secondary/80 transition duration-300">Download Now</a>
+            </nav>
+            <!-- Mobile Menu Placeholder -->
+            <button class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. HERO SECTION (HIGHLY ENGAGING) -->
+        <section class="max-w-7xl mx-auto text-center pt-24 pb-32 px-4 animate-popin">
+            <h2 class="text-6xl font-extrabold leading-tight mb-4">
+                Cross-Platform File Transfer. <br class="hidden sm:inline">
+                <span class="text-kshare-primary">PC to Mobile. Instantly.</span>
+            </h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                KShare is the ultimate **P2P file transfer** utility for your local network. Share securely between **Windows, Mac, Linux, Android, and more** without ever touching the cloud.
+            </p>
+            <div class="space-x-4">
+                <a href="#download" class="inline-block px-8 py-3 bg-kshare-primary text-kshare-dark font-bold rounded-lg text-lg shadow-xl hover:bg-kshare-primary/80 transition duration-300 transform hover:scale-105">
+                    Download KShare - It's Free
+                </a>
+                <a href="#compatibility" class="inline-block px-8 py-3 bg-gray-700 text-white font-medium rounded-lg text-lg hover:bg-gray-600 transition duration-300">
+                    See All Supported OS
+                </a>
+            </div>
+            
+            <!-- Placeholder for a Kivy/Mobile Mockup Image -->
+            <div class="mt-16 w-full max-w-4xl mx-auto">
+                <div class="h-96 w-full bg-gray-800 rounded-xl shadow-2xl flex items-center justify-center border-2 border-gray-700/50">
+                    <p class="text-gray-400">**Image Placeholder: KShare UI Screenshot (Focus on PC & Mobile side-by-side)**</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FEATURES SECTION (New 4-Column Layout) -->
+        <section id="features" class="py-20 px-4 bg-gray-900/50">
+            <div class="max-w-7xl mx-auto">
+                <h3 class="text-4xl font-extrabold text-center mb-16">The KShare Advantage</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    
+                    <!-- NEW CARD 1: PC to Mobile Focus -->
+                    <div class="p-6 rounded-xl bg-gray-800/70 shadow-2xl hover:shadow-kshare-secondary/20 transition duration-500 transform hover:-translate-y-1">
+                        <div class="text-kshare-secondary mb-4 text-4xl">🔄</div>
+                        <h4 class="text-2xl font-bold mb-3">PC ↔ Mobile Transfer</h4>
+                        <p class="text-gray-400 text-sm">Seamlessly move files between your desktop and smartphone. The easiest **PC-Android** and **Mac-Windows** sharing tool.</p>
+                    </div>
+
+                    <!-- Existing Card 1: Speed -->
+                    <div class="p-6 rounded-xl bg-gray-800/70 shadow-2xl hover:shadow-kshare-primary/20 transition duration-500 transform hover:-translate-y-1">
+                        <div class="text-kshare-primary mb-4 text-4xl">🚀</div>
+                        <h4 class="text-2xl font-bold mb-3">LAN Speed Transfer</h4>
+                        <p class="text-gray-400 text-sm">Transfer files at your network's maximum speed. Ideal for huge files. **Zero bandwidth limits.**</p>
+                    </div>
+                    
+                    <!-- Existing Card 2: Security -->
+                    <div class="p-6 rounded-xl bg-gray-800/70 shadow-2xl hover:shadow-red-500/20 transition duration-500 transform hover:-translate-y-1">
+                        <div class="text-red-500 mb-4 text-4xl">🔒</div>
+                        <h4 class="text-2xl font-bold mb-3">True Local Security</h4>
+                        <p class="text-gray-400 text-sm">Your data **never touches the cloud**. Truly P2P for maximum privacy and security on your local network.</p>
+                    </div>
+                    
+                    <!-- Existing Card 3: QR Code -->
+                    <div class="p-6 rounded-xl bg-gray-800/70 shadow-2xl hover:shadow-green-500/20 transition duration-500 transform hover:-translate-y-1">
+                        <div class="text-green-500 mb-4 text-4xl">📱</div>
+                        <h4 class="text-2xl font-bold mb-3">Instant Connect via QR</h4>
+                        <p class="text-gray-400 text-sm">Forget typing IPs. Scan a QR code on the receiver's screen to instantly establish the connection and begin transfer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. OS COMPATIBILITY SECTION (New Section) -->
+        <section id="compatibility" class="py-20 px-4">
+            <div class="max-w-6xl mx-auto text-center">
+                <h3 class="text-4xl font-extrabold text-center mb-4">Unmatched Universal Compatibility</h3>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+                    KShare is built on Kivy, ensuring a native look and feel while supporting a wider range of operating systems than any competitor.
+                </p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
+                    
+                    <!-- OS Tile 1: Windows -->
+                    <div class="p-4 bg-gray-800 rounded-lg w-full transform hover:scale-105 transition duration-300">
+                        <p class="text-4xl">🪟</p>
+                        <p class="text-lg font-bold mt-2">Windows</p>
+                    </div>
+                    <!-- OS Tile 2: Mac -->
+                    <div class="p-4 bg-gray-800 rounded-lg w-full transform hover:scale-105 transition duration-300">
+                        <p class="text-4xl">🍎</p>
+                        <p class="text-lg font-bold mt-2">macOS</p>
+                    </div>
+                    <!-- OS Tile 3: Linux -->
+                    <div class="p-4 bg-gray-800 rounded-lg w-full transform hover:scale-105 transition duration-300">
+                        <p class="text-4xl">🐧</p>
+                        <p class="text-lg font-bold mt-2">Linux (Deb/RPM)</p>
+                    </div>
+                    <!-- OS Tile 4: Android -->
+                    <div class="p-4 bg-gray-800 rounded-lg w-full transform hover:scale-105 transition duration-300">
+                        <p class="text-4xl">🤖</p>
+                        <p class="text-lg font-bold mt-2">Android</p>
+                    </div>
+                    <!-- OS Tile 5: Ubuntu Touch -->
+                    <div class="p-4 bg-gray-800 rounded-lg w-full transform hover:scale-105 transition duration-300">
+                        <p class="text-4xl">📱</p>
+                        <p class="text-lg font-bold mt-2">Ubuntu Touch</p>
+                    </div>
+                    <!-- OS Tile 6: FreeBSD -->
+                    <div class="p-4 bg-gray-800 rounded-lg w-full transform hover:scale-105 transition duration-300">
+                        <p class="text-4xl">🔱</p>
+                        <p class="text-lg font-bold mt-2">FreeBSD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CALL TO ACTION (CTA) -->
+        <section id="download" class="py-20 px-4">
+            <div class="max-w-5xl mx-auto text-center bg-kshare-secondary/20 border border-kshare-secondary/50 rounded-2xl p-12">
+                <h3 class="text-4xl font-extrabold mb-4">Ready for Truly Cross-Platform Sharing?</h3>
+                <p class="text-xl text-gray-300 mb-8">Download KShare today for Windows, macOS, Linux, and Android. Start your secure, LAN file transfers now.</p>
+                <div class="flex justify-center flex-wrap gap-4">
+                    <a href="#" class="px-8 py-3 bg-white text-kshare-dark font-bold rounded-lg shadow-2xl transition duration-300 hover:opacity-80">
+                        Download for Desktop (All OS)
+                    </a>
+                    <a href="#" class="px-8 py-3 bg-kshare-primary text-kshare-dark font-bold rounded-lg shadow-2xl transition duration-300 hover:bg-kshare-primary/80">
+                        Get on Google Play (Android)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="mt-20 border-t border-gray-800 py-8 text-center text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2024 KShare. Built with 💙 by Rahul Kuzur and powered by Kivy. | <a href="#compatibility" class="hover:text-kshare-primary">OS Compatibility</a></p>
+            <div class="mt-2 space-x-4">
+                <a href="/privacy" class="hover:text-kshare-primary">Privacy Policy</a>
+                <a href="https://kuzur.uk" target="_blank" class="hover:text-kshare-primary">Developer Site</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
